@@ -51,17 +51,22 @@ fastfetch() {
   fi
 }
 
-# On low-color consoles, use a simple built-in prompt and skip Oh My Zsh initialization
+# Detect low-color console once for theme/prompt logic
 if is-low-color-console.sh; then
-  autoload -U promptinit
-  promptinit
-  prompt redhat
-  return
+  IS_LOW_COLOR_CONSOLE=1   # flag used to adjust theme/features
+else
+  IS_LOW_COLOR_CONSOLE=0
 fi
 
 # Oh My Zsh installation directory and theme
-export ZSH="/usr/share/oh-my-zsh"
-ZSH_THEME="gozilla"
+export ZSH="/usr/share/oh-my-zsh"    # system-wide Oh My Zsh location
+
+# Use a minimal theme (or none) on low-color consoles, full theme otherwise
+if (( IS_LOW_COLOR_CONSOLE )); then
+  ZSH_THEME=""
+else
+  ZSH_THEME="gozilla"
+fi
 
 # Disable automatic Oh My Zsh update checks
 zstyle ':omz:update' mode disabled
@@ -102,4 +107,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Optional: list the 20 slowest startup hooks
 # zprof | head -n 20
-
+#
