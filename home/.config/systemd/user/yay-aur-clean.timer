@@ -1,0 +1,11 @@
+[Unit]
+Description=Run yay AUR cache cleanup on boot and daily at 04:00
+
+[Timer]
+OnBootSec=0
+OnCalendar=*-*-* 04:00:00
+Persistent=true
+AccuracySec=1us
+
+[Install]
+WantedBy=timers.target

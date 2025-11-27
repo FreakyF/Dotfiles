@@ -1,0 +1,135 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+
+  // Use a custom ASCII logo from file, force all logo colors to red (31)
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/peepo.txt",
+    "padding": {
+      "top": 1
+    },
+    "color": {
+      "1": "31",
+      "2": "31",
+      "3": "31",
+      "4": "31",
+      "5": "31",
+      "6": "31",
+      "7": "31",
+      "8": "31",
+      "9": "31"
+    }
+  },
+
+  // Global display settings: separator, title color, and usage percentage colors
+  "display": {
+    "separator": " ",
+    "color": {
+      "title": "31"
+    },
+    "percent": {
+      "color": {
+        "green": "32",
+        "yellow": "33",
+        "red": "31"
+      }
+    }
+  },
+
+  // Shown info modules and their formatting
+  "modules": [
+    "break",
+
+    {
+      "type": "title"
+    },
+
+    "break",
+
+    {
+      "type": "os",
+      "key": " ",
+      "keyColor": "31"
+    },
+    {
+      "type": "kernel",
+      "key": " ",
+      "keyColor": "31"
+    },
+    {
+      "type": "packages",
+      "key": " ",
+      "keyColor": "31",
+      "format": "{} (pacman)"
+    },
+
+    "break",
+
+    {
+      "type": "shell",
+      "key": " ",
+      "keyColor": "31"
+    },
+    {
+      "type": "terminal",
+      "key": " ",
+      "keyColor": "31"
+    },
+    {
+      "type": "de",
+      "key": " ",
+      "keyColor": "31"
+    },
+
+    "break",
+
+    {
+      "type": "cpu",
+      "key": " ",
+      "keyColor": "31",
+      "format": "{1}"
+    },
+    {
+      "type": "gpu",
+      "key": " ",
+      "keyColor": "31",
+      "format": "{2}"
+    },
+    {
+      "type": "memory",
+      "key": " ",
+      "keyColor": "31"
+    },
+    {
+      "type": "swap",
+      "key": " ",
+      "keyColor": "31"
+    },
+    {
+      "type": "disk",
+      "key": " ",
+      "keyColor": "31",
+      "format": "{1} / {2} ({3})"
+    },
+    {
+      "type": "uptime",
+      "key": " ",
+      "keyColor": "31"
+    },
+
+    "break",
+
+    // 16-color palette preview (normal intensity)
+    {
+      "type": "custom",
+      "format": "\u001b[30m󰪥   \u001b[31m󰪥   \u001b[32m󰪥   \u001b[33m󰪥   \u001b[34m󰪥   \u001b[35m󰪥   \u001b[36m󰪥"
+    },
+    // 16-color palette preview (bright intensity)
+    {
+      "type": "custom",
+      "format": "\u001b[90m󰪥   \u001b[91m󰪥   \u001b[92m󰪥   \u001b[93m󰪥   \u001b[94m󰪥   \u001b[95m󰪥   \u001b[96m󰪥"
+    },
+
+    "break"
+  ]
+}
