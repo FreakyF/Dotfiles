@@ -53,13 +53,13 @@ fastfetch() {
 
 # Detect low-color console once for theme/prompt logic
 if is-low-color-console.sh; then
-  IS_LOW_COLOR_CONSOLE=1   # flag used to adjust theme/features
+  IS_LOW_COLOR_CONSOLE=1
 else
   IS_LOW_COLOR_CONSOLE=0
 fi
 
 # Oh My Zsh installation directory and theme
-export ZSH="/usr/share/oh-my-zsh"    # system-wide Oh My Zsh location
+export ZSH="/usr/share/oh-my-zsh"
 
 # Use a minimal theme (or none) on low-color consoles, full theme otherwise
 if (( IS_LOW_COLOR_CONSOLE )); then
