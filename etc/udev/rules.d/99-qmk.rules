@@ -1,2 +1,2 @@
 # QMK Toolbox access rule for Monsgeek M1 V5
-SUBSYSTEM=="usb", ATTR{idVendor}=="342d", ATTR{idProduct}=="e4c5", MODE="0666", GROUP="plugdev"
+SUBSYSTEM=="usb", ATTR{idVendor}=="342d", ATTR{idProduct}=="e4c5", MODE="0660", GROUP="plugdev"
