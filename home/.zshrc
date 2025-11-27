@@ -79,7 +79,6 @@ export NVM_LAZY_LOAD=true
 zstyle ':omz:plugins:*' aliases no
 
 zstyle ':omz:plugins:aws'              lazy yes
-zstyle ':omz:plugins:azure'            lazy yes
 zstyle ':omz:plugins:docker'           lazy yes
 zstyle ':omz:plugins:terraform'        lazy yes
 zstyle ':omz:plugins:kubectl'          lazy yes
@@ -91,7 +90,7 @@ zstyle ':omz:plugins:npm'              lazy yes
 plugins=(
   vi-mode command-not-found
   copypath copyfile
-  aws azure
+  aws
   docker terraform kubectl helm
   dotnet npm zsh-nvm
 )
