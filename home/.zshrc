@@ -104,6 +104,13 @@ source "$ZSH/oh-my-zsh.sh"
 # Enable Zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# For low-color consoles, switch to the simple built-in redhat prompt
+if (( IS_LOW_COLOR_CONSOLE )); then
+  autoload -U promptinit
+  promptinit
+  prompt redhat
+fi
+
 # Optional: list the 20 slowest startup hooks
 # zprof | head -n 20
 #
