@@ -1,11 +1,12 @@
 [Unit]
-Description=Force mic volume to 0.20 after PipeWire/WirePlumber
-After=pipewire.service pipewire-pulse.service wireplumber.service
-PartOf=pipewire.service pipewire-pulse.service wireplumber.service
+Description=Force mic volume to 0.20 (Monitor Mode)
+After=pipewire.service wireplumber.service
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart=%h/.local/bin/set-mic-volume.sh
+Restart=always
+RestartSec=3
 
 [Install]
 WantedBy=default.target

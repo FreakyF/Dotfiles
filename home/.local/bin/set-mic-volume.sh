@@ -1,14 +1,18 @@
-#!/bin/sh
-# Wait for the default audio source to be ready, then set its initial volume
+#!/bin/bash
 
-TARGET='@DEFAULT_AUDIO_SOURCE@' # PipeWire default audio source
-VOL='0.20'                      # target volume level (0.0–1.0)
+TARGET='@DEFAULT_AUDIO_SOURCE@'
+VOL='0.20'
 
-# Poll until the target source becomes available
-while ! wpctl get-volume "$TARGET" >/dev/null 2>&1; do
-    sleep 0.1
+sleep 2
+
+fix_volume() {
+    wpctl set-volume "$TARGET" "$VOL" 2>/dev/null
+    wpctl set-mute "$TARGET" 0 2>/dev/null
+}
+
+fix_volume
+
+pactl subscribe | stdbuf -oL grep "Event 'change' on server" | while read -r event; do
+    fix_volume
 done
-
-# Apply the desired volume once the source is ready
-wpctl set-volume "$TARGET" "$VOL"
 
