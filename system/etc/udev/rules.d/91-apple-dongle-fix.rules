@@ -1,0 +1,2 @@
+# PipeWire configuration rule for Apple USB-C Dongle
+SUBSYSTEM=="sound", ATTRS{idVendor}=="05ac", ATTRS{idProduct}=="110a", ENV{ACP_PROFILE_SET}="analog-only.conf"

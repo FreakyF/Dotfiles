@@ -1,0 +1,10 @@
+[Unit]
+Description=Disable systemd wall messages
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/busctl set-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager EnableWallMessages b false
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

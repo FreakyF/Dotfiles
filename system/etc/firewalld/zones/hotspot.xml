@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone target="ACCEPT">
+  <service name="dns"/>
+  <service name="dhcp"/>
+  <masquerade/>
+  <forward/>
+</zone>

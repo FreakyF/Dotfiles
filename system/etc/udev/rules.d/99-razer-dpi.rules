@@ -1,0 +1,1 @@
+ACTION=="add|bind", SUBSYSTEM=="hid", DRIVERS=="razermouse", RUN+="/bin/sh -c 'for d in /sys/bus/hid/drivers/razermouse/*:*; do [ -f \"$d/dpi\" ] && echo 800 > \"$d/dpi\"; [ -f \"$d/poll_rate\" ] && echo 1000 > \"$d/poll_rate\"; done'"

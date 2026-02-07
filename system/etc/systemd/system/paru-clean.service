@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean paru AUR cache
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/paru -Sc --noconfirm
+
+[Install]
+WantedBy=multi-user.target

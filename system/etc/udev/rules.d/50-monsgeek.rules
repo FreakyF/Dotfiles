@@ -1,0 +1,5 @@
+# VIA access rule for Monsgeek M1 V5
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="342d", ATTRS{idProduct}=="e4c5", MODE="0660", GROUP="wheel", TAG+="uaccess"
+
+# QMK Toolbox access rule for Monsgeek M1 V5
+SUBSYSTEM=="usb", ATTR{idVendor}=="342d", ATTR{idProduct}=="e4c5", MODE="0660", GROUP="wheel"

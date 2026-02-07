@@ -1,0 +1,7 @@
+[tools]
+awscli = "latest"
+helm = "latest"
+kubectl = "latest"
+hadolint = "latest"
+shellcheck = "latest"
+shfmt = "latest"
