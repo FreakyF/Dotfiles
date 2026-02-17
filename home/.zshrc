@@ -54,16 +54,16 @@ zstyle ':omz:plugins:kubectl'          lazy yes
 zstyle ':omz:plugins:helm'             lazy yes
 zstyle ':omz:plugins:dotnet'           lazy yes
 zstyle ':omz:plugins:npm'              lazy yes
-zstyle ':omz:plugins:aws'              lazy yes
+zstyle ':omz:plugins:azure'            lazy yes
 zstyle ':omz:plugins:golang'           lazy yes
 zstyle ':omz:plugins:python'           lazy yes
-zstyle ':omz:plugins:rust'              lazy yes
+zstyle ':omz:plugins:rust'             lazy yes
 
 plugins=(
   vi-mode command-not-found
   copypath copyfile
   docker docker-compose terraform kubectl helm
-  aws
+  azure
   dotnet npm golang python rust
 )
 

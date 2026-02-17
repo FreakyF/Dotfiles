@@ -1,7 +1,12 @@
 [tools]
-awscli = "latest"
-helm = "latest"
 kubectl = "latest"
-hadolint = "latest"
 shellcheck = "latest"
 shfmt = "latest"
+hadolint = "latest"
+helm = "latest"
+uv = "latest"
+azure-cli = "latest"
+
+[settings]
+trusted_config_paths = ["/home/kamil/Repos"]
+python_venv_auto_create = true
